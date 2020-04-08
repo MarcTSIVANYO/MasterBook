@@ -1,0 +1,10 @@
+<?php
+include("config.php");
+if($_GET['logout']){
+        $deconnecte=$classperson->deconnecte($_SESSION['appmail']['id_pers']);
+        @session_destroy();
+        header("location:login.php");
+        exit();
+}
+if(!isset($_SESSION['appmail']['login']))header("location:login.php");
+?>
